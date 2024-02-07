@@ -1102,7 +1102,7 @@ Material:
     - _EmissionBlinkingOffset1: 0
     - _EmissionBlinkingOffset2: 0
     - _EmissionBlinkingOffset3: 0
-    - _EmissionCenterOutEnabled: 0
+    - _EmissionCenterOutEnabled: 1
     - _EmissionCenterOutEnabled1: 0
     - _EmissionCenterOutEnabled2: 0
     - _EmissionCenterOutEnabled3: 0
@@ -1166,7 +1166,7 @@ Material:
     - _EmissionScrollingVertexColor1: 0
     - _EmissionScrollingVertexColor2: 0
     - _EmissionScrollingVertexColor3: 0
-    - _EmissionStrength: 0
+    - _EmissionStrength: 1
     - _EmissionStrength1: 0
     - _EmissionStrength2: 0
     - _EmissionStrength3: 0
@@ -1248,8 +1248,8 @@ Material:
     - _FlipbookFPS: 30
     - _FlipbookFrameOffset: 0
     - _FlipbookHueShift: 0
-    - _FlipbookHueShiftEnabled: 0
-    - _FlipbookHueShiftSpeed: 0
+    - _FlipbookHueShiftEnabled: 1
+    - _FlipbookHueShiftSpeed: 4
     - _FlipbookIntensityControlsAlpha: 1
     - _FlipbookManualFrameControl: 0
     - _FlipbookMaskChannel: 0
@@ -2715,7 +2715,7 @@ Material:
     - m_start_emission1Options: 0
     - m_start_emission2Options: 0
     - m_start_emission3Options: 0
-    - m_start_emissionOptions: 0
+    - m_start_emissionOptions: 1
     - m_start_flipBook: 1
     - m_start_glitter: 0
     - m_start_internalparallax: 0
@@ -2901,7 +2901,7 @@ Material:
     - _EmissionAL2StrengthMod: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionAL3Multipliers: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionAL3StrengthMod: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.8113208, g: 0.7704996, b: 0.7704996, a: 1}
     - _EmissionColor1: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor3: {r: 1, g: 1, b: 1, a: 1}
@@ -2919,7 +2919,7 @@ Material:
     - _EmissiveScroll_Direction3: {r: 0, g: -10, b: 0, a: 0}
     - _FXProximityColorMaxColor: {r: 1, g: 1, b: 1, a: 1}
     - _FXProximityColorMinColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlipbookColor: {r: 1, g: 0, b: 0.10030937, a: 1}
+    - _FlipbookColor: {r: 0, g: 1, b: 0, a: 1}
     - _FlipbookCrossfadeRange: {r: 0.75, g: 1, b: 0, a: 1}
     - _FlipbookMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _FlipbookScaleOffset: {r: 1, g: 1, b: 0, a: 0}
