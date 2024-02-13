@@ -6,7 +6,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     private WaitForSeconds gameTimer;
-    [SerializeField] private int timeLeft = 60;
+    public int timeLeft = 60;
     [SerializeField] private TextMeshProUGUI timerText;
     public bool gameActive = true;
 

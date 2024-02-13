@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Ballrolling : MonoBehaviour
 {
-    [SerializeField] private float rollingForce;
+    [SerializeField] private float rollingForce, jumpForce;
     private Vector3 ballToTarget;
     private Rigidbody objectRB;
+    public bool isGrounded;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,19 @@ public class Ballrolling : MonoBehaviour
             ballToTarget = ((transform.position + new Vector3(0f,0f,1f)) - transform.position).normalized;
             objectRB.AddForce(ballToTarget*rollingForce*Time.deltaTime);
         }
+        if(Input.GetKey("space") && isGrounded)
+        {
+            ballToTarget = ((transform.position + new Vector3(0f,1f,0f)) - transform.position).normalized;
+            objectRB.AddForce(ballToTarget*jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
         
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
     }
 }
