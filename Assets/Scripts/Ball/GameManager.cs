@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] ScoreManager scoreManager;
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel, game;
     [SerializeField] private TMP_InputField playerName;
     private bool gameOver = false;
+    private List<string> highScoreNames = new List<string>();
+    private List<int> highScores = new List<int>();
 
     void Update()
     {
@@ -29,10 +32,31 @@ public class GameManager : MonoBehaviour
     public void SavePlayerData()
     {
         string filePath = Application.persistentDataPath + "/highScores.txt";
-        using (StreamWriter writer = new StreamWriter(filePath, true))
+        StreamWriter writer = new StreamWriter(filePath, true);
+        writer.WriteLine(playerName.text + " " + scoreManager.score.ToString());
+        writer.Close();
+        //Debug.Log("Saved");
+    }
+
+    public void LoadPlayerData()
+    {
+        string filePath = Application.persistentDataPath + "/highScores.txt";
+        StreamReader reader = new StreamReader(filePath);
+        string line = reader.ReadLine();
+        while (line != null)
         {
-            writer.WriteLine(playerName.text, scoreManager.score);
+            //Debug.Log(line);
+            line = reader.ReadLine();
+            string tempRead = reader.ReadLine();
+            string[] tempLine = tempRead.Split('\n');
+            for (int i = 0; i < tempLine.Length; i++)
+            {
+                string[] tempScore = tempLine[i].Split(' ');
+                highScoreNames.Add(tempScore[0]);
+                highScores.Add(int.Parse(tempScore[1]));
+            }
         }
+        reader.Close();
     }
 
     public void loadScene(string sceneName)
